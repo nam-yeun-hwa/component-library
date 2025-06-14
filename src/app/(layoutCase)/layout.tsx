@@ -11,7 +11,7 @@ import HeaderModal from "@/components/layout/HeaderModal";
 // import { useModalStore } from "@/store/common/useModalStore";
 // import Slider from "@/components/common/ui/gallery/Slider";
 import classNames from "classnames";
-import { navigationRoutes, routeNav, tabs } from "@/data/commom";
+import { allNavigationRoutes, routeNav, tabs } from "@/data/commom";
 // import { useModalStore } from "@/store/common/useModalStore";
 // import { useModalStore } from "@/store/useModalStore";
 
@@ -36,7 +36,7 @@ export default function Layout({ children }: Props) {
   // }, [isLoaded, error]);
 
   const headerName = () => {
-    const pageName = navigationRoutes.find((tab: routeNav) => tab.path === pathname)?.name;
+    const pageName = allNavigationRoutes.find((tab: routeNav) => tab.path === pathname)?.name;
     if (pageName) {
       return pageName;
     } else if (pathname.startsWith("/cs")) {
@@ -64,12 +64,7 @@ export default function Layout({ children }: Props) {
           ) : modalActive ? (
             <HeaderModal />
           ) : (
-            <PageHeader
-              className={classNames({
-                "!bg-[#f8f9fb]": pathname === "/donation" || pathname === "/mypage/donation-tax-benefit",
-              })}
-              locatedTitle={headerName()}
-            />
+            <PageHeader locatedTitle={headerName()} />
           )}
         </>
 
