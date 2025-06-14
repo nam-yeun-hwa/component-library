@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+  }
+}
+
+@layer utilities {
+}
+
+body {
+}
+
+/* 스크롤 인디케이터 숨기기 */
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 모바일 터치시 파란 하이라이트 제거 */
+*::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -webkit-tap-highlight-color: transparent; /* 파란색 highlight 제거 */
+}
+
+/* 아이폰 input 터치시 확대되는 내용  */
+input,
+textarea,
+select {
+  font-size: 16px !important;
+}
