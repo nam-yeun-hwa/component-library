@@ -78,15 +78,15 @@ textarea {
   margin: 0;
 }
 
-/* 버튼 커서와 기본 스타일 */
-/* button,
+/* 버튼 커서와 기본 스타일  */
+button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
   background: none;
   border: none;
   cursor: pointer;
-} */
+}
 
 /* 링크 기본 스타일 */
 a {
@@ -100,7 +100,9 @@ table {
   border-spacing: 0;
 }
 
-/* 다음지도 스타일 적용 */
+/* ============================= 
+   ====== 다음지도 스타일 적용 ======
+   ============================= */
 #postcode-container > div {
   width: 100% !important;
   height: 100% !important;
@@ -115,7 +117,9 @@ table {
   padding: 0px;
 }
 
-/* datepicker-custom.css */
+/* ============================= 
+   ===== datepicker-custom =====
+   ============================= */
 .react-datepicker {
   font-size: 2rem !important;
   border: none !important;
@@ -167,3 +171,7 @@ table {
 .react-datepicker__month {
   margin: 0 !important;
 }
+
+/* ============================= 
+   ===== datepicker-custom =====
+   ============================= */

@@ -20,13 +20,13 @@ export interface TabItem {
 export const tabs: TabItem[] = [
   {
     name: "혜택",
-    path: "/",
+    path: "/category1",
     iconName: "ic:round-home",
     iconColor: "#999999",
   },
   {
     name: "DM",
-    path: "/",
+    path: "/category2",
     iconName: "ic:round-home",
     iconColor: "#999999",
   },
@@ -38,13 +38,13 @@ export const tabs: TabItem[] = [
   },
   {
     name: "내정보",
-    path: "/category4",
+    path: "/category3",
     iconName: "ic:round-home",
     iconColor: "#999999",
   },
   {
     name: "전체메뉴",
-    path: "/category5",
+    path: "/category4",
     iconName: "ic:round-home",
     iconColor: "#999999",
   },
