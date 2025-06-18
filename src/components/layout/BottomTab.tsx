@@ -22,7 +22,6 @@ export default function BottomTab({ tabs }: BottomTabProps) {
             ) : (
               <Image src="/icons/mdi-home.svg" alt="Home Icon" width={30} height={30} priority />
             )}
-
             <span className="text-xs mt-[0px]">{tab.name}</span>
           </button>
         ))}
