@@ -14,6 +14,7 @@ interface SlideBannerState {
   handleSetShowPagination: (show: boolean) => void;
   handleSetActiveSlideIndex: (index: number) => void;
   handleSetIsTransitioning: (isTransitioning: boolean) => void;
+  handleGoToSlide: (index: number) => void;
 }
 
 const useSlideBanner = (initialSlides: Product[] = []): SlideBannerState => {
@@ -45,13 +46,25 @@ const useSlideBanner = (initialSlides: Product[] = []): SlideBannerState => {
   };
 
   const handleSetActiveSlideIndex = (index: number) => {
-    if (index >= 0 && index < slides.length) {
-      setActiveSlideIndex(index);
+    if (slides.length === 0) return;
+    let newIndex = index;
+    if (index < 0) {
+      newIndex = slides.length - 1; // 첫 슬라이드에서 왼쪽 드래그 -> 마지막 슬라이드
+    } else if (index >= slides.length) {
+      newIndex = 0; // 마지막 슬라이드에서 오른쪽 드래그 -> 첫 슬라이드
     }
+    setActiveSlideIndex(newIndex);
   };
 
   const handleSetIsTransitioning = (transitioning: boolean) => {
     setIsTransitioning(transitioning);
+  };
+
+  const handleGoToSlide = (index: number): void => {
+    if (isTransitioning || index === activeSlideIndex) return;
+    handleSetIsTransitioning(true);
+    handleSetActiveSlideIndex(index);
+    setTimeout(() => handleSetIsTransitioning(false), 300);
   };
 
   return {
@@ -67,6 +80,7 @@ const useSlideBanner = (initialSlides: Product[] = []): SlideBannerState => {
     handleSetShowPagination,
     handleSetActiveSlideIndex,
     handleSetIsTransitioning,
+    handleGoToSlide,
   };
 };
 
