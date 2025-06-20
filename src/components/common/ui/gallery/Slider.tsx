@@ -38,7 +38,7 @@ const Slider: React.FC<SwiperProps> = ({ className = "", products }) => {
     return <></>;
   }
 
-  const translateX = `calc(-${activeSlideIndex * 100}% + ${dragOffset}px)`;
+  const translateX = `calc(-${activeSlideIndex * 100}%`;
 
   return (
     <div className="">
